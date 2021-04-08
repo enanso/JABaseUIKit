@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'JABaseUIKit_Example' do
+  pod 'JABaseUIKit', :path => '../'
+
+  target 'JABaseUIKit_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
