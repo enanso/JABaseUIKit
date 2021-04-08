@@ -1,0 +1,30 @@
+{
+  "name": "JABaseUIKit",
+  "version": "0.1.0",
+  "summary": "A short description of JABaseUIKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/enanso/JABaseUIKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "lanmemory@163.com": "lanmemory@163.com"
+  },
+  "source": {
+    "git": "https://github.com/enanso/JABaseUIKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "JABaseUIKit/Classes/**/*",
+  "dependencies": {
+    "AFNetworking": [
+
+    ],
+    "Masonry": [
+
+    ]
+  }
+}

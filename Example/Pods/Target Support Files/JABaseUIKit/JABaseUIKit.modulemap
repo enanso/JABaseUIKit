@@ -1,0 +1,6 @@
+framework module JABaseUIKit {
+  umbrella header "JABaseUIKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
