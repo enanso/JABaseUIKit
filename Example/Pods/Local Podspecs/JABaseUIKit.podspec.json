@@ -1,7 +1,7 @@
 {
   "name": "JABaseUIKit",
   "version": "0.1.0",
-  "summary": "A short description of JABaseUIKit.",
+  "summary": "基础UI组件库-JABaseUIKit",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/enanso/JABaseUIKit",
   "license": {
@@ -15,16 +15,23 @@
     "git": "https://github.com/enanso/JABaseUIKit.git",
     "tag": "0.1.0"
   },
+  "swift_versions": "5.0",
   "platforms": {
     "ios": "9.0"
   },
   "source_files": "JABaseUIKit/Classes/**/*",
+  "static_framework": true,
+  "pod_target_xcconfig": {
+    "VALID_ARCHS": "x86_64 armv7 arm64",
+    "OTHER_LDFLAGS": "\"-ObjC\""
+  },
   "dependencies": {
-    "AFNetworking": [
-
-    ],
     "Masonry": [
 
+    ],
+    "SnapKit": [
+
     ]
-  }
+  },
+  "swift_version": "5.0"
 }

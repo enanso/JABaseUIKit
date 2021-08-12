@@ -27,10 +27,17 @@ TODO: Add long description of the pod here.
   s.author           = { 'lanmemory@163.com' => 'lanmemory@163.com' }
   s.source           = { :git => 'https://github.com/enanso/JABaseUIKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  
+  # 支持 swift 版本
+  s.swift_version = '5.0'
+  # 支持OC版本
   s.ios.deployment_target = '9.0'
-
+  
+  # 不考虑文件分层
   s.source_files = 'JABaseUIKit/Classes/**/*'
+  s.static_framework = true
+  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' ,'OTHER_LDFLAGS' => '"-ObjC"'}
+
   
   # s.resource_bundles = {
   #   'JABaseUIKit' => ['JABaseUIKit/Assets/*.png']
@@ -39,6 +46,11 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency 'AFNetworking'
+  
+  # OC依赖库
   s.dependency 'Masonry'
+  
+  # Swift 依赖库
+  s.dependency 'SnapKit'
+  
 end

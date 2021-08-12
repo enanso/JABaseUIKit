@@ -1,50 +1,27 @@
 PODS:
-  - AFNetworking (4.0.1):
-    - AFNetworking/NSURLSession (= 4.0.1)
-    - AFNetworking/Reachability (= 4.0.1)
-    - AFNetworking/Security (= 4.0.1)
-    - AFNetworking/Serialization (= 4.0.1)
-    - AFNetworking/UIKit (= 4.0.1)
-  - AFNetworking/NSURLSession (4.0.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1)
-  - AFNetworking/Security (4.0.1)
-  - AFNetworking/Serialization (4.0.1)
-  - AFNetworking/UIKit (4.0.1):
-    - AFNetworking/NSURLSession
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
   - JABaseUIKit (0.1.0):
-    - AFNetworking
     - Masonry
+    - SnapKit
   - Masonry (1.1.0)
+  - SnapKit (4.2.0)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase
   - JABaseUIKit (from `../`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - AFNetworking
     - Masonry
-  trunk:
-    - FBSnapshotTestCase
+    - SnapKit
 
 EXTERNAL SOURCES:
   JABaseUIKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  JABaseUIKit: 851d3d9eddcaa461d91b930ede5f53ccd3eff1c5
+  JABaseUIKit: c4fc208ff3fd77ddbeb390972b650566b23a07af
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: ddcae341538b902f66897e36817fcbe6faaf5ec2
+PODFILE CHECKSUM: 5881b9f6d888e91153a6c358dec8af80b34fd695
 
 COCOAPODS: 1.10.1
