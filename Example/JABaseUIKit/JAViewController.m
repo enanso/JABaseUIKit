@@ -28,6 +28,12 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     QSWebViewController *web = [[QSWebViewController alloc] init];
     web.url = @"http://192.168.0.159:9009";
-    [self presentViewController:web animated:YES completion:nil];
+    web.modalPresentationStyle  = UIModalPresentationFullScreen;
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"qsmain" ofType:@"html"];
+    web.url = filePath;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:web];
+    nav.modalPresentationStyle  = UIModalPresentationFullScreen;
+    [self presentViewController:nav animated:YES completion:nil];
 }
 @end

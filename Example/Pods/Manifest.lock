@@ -2,8 +2,12 @@ PODS:
   - JABaseUIKit (0.1.0):
     - Masonry
     - SnapKit
+    - SwiftyJSON
+    - WebViewJavascriptBridge
   - Masonry (1.1.0)
   - SnapKit (4.2.0)
+  - SwiftyJSON (5.0.1)
+  - WebViewJavascriptBridge (6.0.3)
 
 DEPENDENCIES:
   - JABaseUIKit (from `../`)
@@ -12,15 +16,19 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Masonry
     - SnapKit
+    - SwiftyJSON
+    - WebViewJavascriptBridge
 
 EXTERNAL SOURCES:
   JABaseUIKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JABaseUIKit: c4fc208ff3fd77ddbeb390972b650566b23a07af
+  JABaseUIKit: 48a613525d3766a6a1acd112909ea1eb43b27a73
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
 PODFILE CHECKSUM: 5881b9f6d888e91153a6c358dec8af80b34fd695
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		211A18B426CA3B63005EC0EF /* qsmain.html in Resources */ = {isa = PBXBuildFile; fileRef = 211A18B326CA3B63005EC0EF /* qsmain.html */; };
 		218A347A26C52A4100CF046F /* JAFirstSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A347926C52A4100CF046F /* JAFirstSwift.swift */; };
 		35109D627B4BC97DDDDB368C /* Pods_JABaseUIKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBEC0EF19AD45419ECF174FA /* Pods_JABaseUIKit_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -41,6 +42,7 @@
 		01CE8C40643A58358397BFE6 /* JABaseUIKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JABaseUIKit.podspec; path = ../JABaseUIKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		07A9349F4B4F42DFE337619C /* Pods-JABaseUIKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABaseUIKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-JABaseUIKit_Tests/Pods-JABaseUIKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		127FC39467B4C98211428783 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		211A18B326CA3B63005EC0EF /* qsmain.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = qsmain.html; sourceTree = "<group>"; };
 		218A347826C52A4000CF046F /* JABaseUIKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JABaseUIKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		218A347926C52A4100CF046F /* JAFirstSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAFirstSwift.swift; sourceTree = "<group>"; };
 		31274816BA04F71E6F23B3CC /* Pods_JABaseUIKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABaseUIKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				6003F5A8195388D20070C39A /* Images.xcassets */,
+				211A18B326CA3B63005EC0EF /* qsmain.html */,
 				6003F59C195388D20070C39A /* JAAppDelegate.h */,
 				6003F59D195388D20070C39A /* JAAppDelegate.m */,
 				218A347826C52A4000CF046F /* JABaseUIKit_Example-Bridging-Header.h */,
@@ -213,6 +216,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				B0603AD3B730CFA1547666F4 /* [CP] Embed Pods Frameworks */,
+				259C6CA1F37746ADFB83339A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -289,6 +293,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				211A18B426CA3B63005EC0EF /* qsmain.html in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +331,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		259C6CA1F37746ADFB83339A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JABaseUIKit_Example/Pods-JABaseUIKit_Example-resources.sh",
+				"${PODS_ROOT}/../../JABaseUIKit/Classes/Resource/st_back@2x.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/st_back@2x.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JABaseUIKit_Example/Pods-JABaseUIKit_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B0603AD3B730CFA1547666F4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,11 +358,15 @@
 				"${PODS_ROOT}/Target Support Files/Pods-JABaseUIKit_Example/Pods-JABaseUIKit_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

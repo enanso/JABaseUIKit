@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>本地JS交互测试</title>
+</head>
+<body>
+
+<h1 align="center" style="color:red;font-size:60px">标题1</h1>
+
+<script>
+     
+     //JS调用原生
+     function callNativeApp(){
+         try {
+             webkit.messageHandlers.callbackHandler.postMessage("I Love U")
+         } catch {
+             console.log("The native context does not exist yet（Method： callNativeApp）")
+         }
+     }
+    
+    //JS调用原生，传字典
+    function shareClick() {
+        try {
+            webkit.messageHandlers.share.postMessage({title:'测试分享的标题',content:'测试分享的内容',url:'http://www.baidu.com'});
+        } catch {
+            console.log("The native context does not exist yet（Method： shareClick）")
+        }
+    }
+    
+    //原生调用JS
+    function redHeader() {
+        document.querySelector('h1').style.color = "red";
+    }
+    //原生调用JS
+    function callBackResult(param) {
+        console.log("====你已经吊起了shareResult")
+    }
+    
+</script>
+
+<button style="text-align:center;height:50px;width:200px;font-size:30px;" onclick="shareClick()">调用JS</button>
+
+</body>
+</html>

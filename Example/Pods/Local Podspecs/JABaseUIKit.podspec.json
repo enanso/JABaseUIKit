@@ -25,11 +25,18 @@
     "VALID_ARCHS": "x86_64 armv7 arm64",
     "OTHER_LDFLAGS": "\"-ObjC\""
   },
+  "resources": "JABaseUIKit/Classes/Resource/*.png",
   "dependencies": {
     "Masonry": [
 
     ],
+    "WebViewJavascriptBridge": [
+
+    ],
     "SnapKit": [
+
+    ],
+    "SwiftyJSON": [
 
     ]
   },

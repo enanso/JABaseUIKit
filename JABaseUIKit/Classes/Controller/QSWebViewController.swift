@@ -27,38 +27,40 @@ class WSKWeakScriptMessageDelegate: NSObject,WKScriptMessageHandler {
     }
 }
 
-public class QSWebViewController: QSViewController {
+public class QSWebViewController: QSViewController, WKUIDelegate {
     
     // WKWebView
     lazy var webView: WKWebView = {
-         ///偏好设置
-         let preferences = WKPreferences()
-         preferences.javaScriptEnabled = true
+        ///偏好设置
+        let preferences = WKPreferences()
+        preferences.javaScriptEnabled = true
 
-         let configuration = WKWebViewConfiguration()
-         configuration.preferences = preferences
-         configuration.selectionGranularity = WKSelectionGranularity.character
-         configuration.userContentController = WKUserContentController()
-        
+        let configuration = WKWebViewConfiguration()
+        configuration.preferences = preferences
+        configuration.selectionGranularity = WKSelectionGranularity.character
+        let userContentController = WKUserContentController()
+        configuration.userContentController = userContentController
+
         configuration.allowsInlineMediaPlayback = true
-        
-         // 给webview与swift交互起名字，webview给swift发消息的时候会用到
-        configuration.userContentController.add(WSKWeakScriptMessageDelegate(scriptDelegate: self), name: "logger")
-        configuration.userContentController.add(WSKWeakScriptMessageDelegate(scriptDelegate: self), name: "redResponse")
-        configuration.userContentController.add(WSKWeakScriptMessageDelegate(scriptDelegate: self), name: "blueResponse")
-        configuration.userContentController.add(WSKWeakScriptMessageDelegate(scriptDelegate: self), name: "greenResponse")
-        configuration.userContentController.add(WSKWeakScriptMessageDelegate(scriptDelegate: self), name: "yellowResponse")
 
-        let webView = WKWebView(frame: .zero, configuration: configuration)
+        // 给webview与swift交互起名字，webview给swift发消息的时候会用到
+        userContentController.add(WSKWeakScriptMessageDelegate(scriptDelegate: self), name: "share")
+        userContentController.add(WSKWeakScriptMessageDelegate(scriptDelegate: self), name: "callbackHandler")
+
+        let webView = WKWebView(frame: CGRect.zero, configuration: configuration)
+        self.view.addSubview(webView)
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
+        webView.scrollView.isScrollEnabled = true
+        webView.scrollView.showsVerticalScrollIndicator = false
+        webView.scrollView.showsHorizontalScrollIndicator = false
+        // 让webview翻动有回弹效果
+        webView.scrollView.bounces = false
+        // 只允许webview上下滚动
+        webView.scrollView.alwaysBounceVertical = true
         //监听加载进度
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
-        self.view.addSubview(webView)
-         // 让webview翻动有回弹效果
-         webView.scrollView.bounces = false
-         // 只允许webview上下滚动
-         webView.scrollView.alwaysBounceVertical = true
-         webView.navigationDelegate = self
-         return webView
+        return webView
      }()
     // 进度条
     public lazy var progressView:UIProgressView = {
@@ -73,13 +75,18 @@ public class QSWebViewController: QSViewController {
     @objc public var url: String?
     
     public override func viewDidLoad() {
-        super.viewDidLoad()
-        
         if self.url!.count > 0 {
             initInterface()
-            let request = URLRequest(url: URL(string: self.url!)!)
-            webView.load(request)
+//            let request = URLRequest(url: URL(string: self.url!)!)
+//            self.webView.load(request)
+//            //加载本地文件
+//            let filePath=Bundle.main.path(forResource: "qsmain", ofType: "html")
+            do {
+                let htmlString = try NSString.init(contentsOfFile: self.url!, encoding: String.Encoding.utf8.rawValue)
+                self.webView.loadHTMLString(htmlString as String  , baseURL: NSURL.fileURL(withPath: self.url!))
+            }catch{}
         }
+        super.viewDidLoad()
     }
     
     /// 布局UI
@@ -126,8 +133,8 @@ extension QSWebViewController: WKNavigationDelegate{
         UIView.animate(withDuration: 0.5) {
             self.progressView.isHidden = true
         }
-        //获取当前网页的html
-        webView.evaluateJavaScript("document.documentElement.innerHTML", completionHandler: nil)
+//        //获取当前网页的html
+//        webView.evaluateJavaScript("document.documentElement.innerHTML", completionHandler: nil)
 
 //        let attribstr = try! NSAttributedString.init(data:(str?.data(using: String.Encoding.unicode))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
         
@@ -156,27 +163,7 @@ extension QSWebViewController: WKScriptMessageHandler{
                                didReceive message: WKScriptMessage) {
         ///在控制台中打印html中console.log的内容,方便调试
         let body = message.body
-        if message.name == "logger" {
-            print("JS log:\(body)")
-            return
-        }
-        ///message.name是约定好的方法名,message.body是携带的参数
-        switch message.name {
-        case "redResponse":
-            ///不接收参数时直接不处理message.body即可,不用管Html传了什么
-            //redRequest()
-            break
-        case "blueResponse":
-            //blueRequest(string: message.body as! String)
-            break
-        case "greenResponse":
-            //greenRequest(int: message.body as! Int)
-            break
-        case "yellowResponse":
-            //yellowRequest(array: message.body as! [String])
-            break
-        default:
-            break
-        }
+        print("JS 交互名称:\(message.name)")
+        print("JS 传参:\(body)")
     }
 }

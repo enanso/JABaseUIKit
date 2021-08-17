@@ -39,6 +39,15 @@ TODO: Add long description of the pod here.
   s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' ,'OTHER_LDFLAGS' => '"-ObjC"'}
 
   
+  #  #  #  #  #  #  #  #  #  #  #  #  #
+  #
+  #  参考：https://blog.csdn.net/BUG_delete/article/details/100777277
+  #  1.图片文件夹，如果资源文件不多，使用s.resources = 'JABaseUIKit/Classes/Resource/*.png'比较方便
+  #  2.s.resource_bundles生成的资源文件，会生成一个bundle文件，使用的时候就是要先获取到这个bundle，生成静态库时可避免同名文件重复
+  #    NSString * path = [[NSBundle bundleForClass:classType] pathForResource:@"SourceBundleName" ofType:@"bundle"];
+  #
+  #  #  #  #  #  #  #
+  s.resources = 'JABaseUIKit/Classes/Resource/*.png'
   # s.resource_bundles = {
   #   'JABaseUIKit' => ['JABaseUIKit/Assets/*.png']
   # }
@@ -49,8 +58,9 @@ TODO: Add long description of the pod here.
   
   # OC依赖库
   s.dependency 'Masonry'
-  
+  s.dependency 'WebViewJavascriptBridge'
   # Swift 依赖库
   s.dependency 'SnapKit'
+  s.dependency 'SwiftyJSON'
   
 end
