@@ -38,9 +38,28 @@
         console.log("====你已经吊起了shareResult")
     }
     
+    /*这段代码是固定的，必须要放到js中*/
+    function setupWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+        if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+        window.WVJBCallbacks = [callback];
+        var WVJBIframe = document.createElement('iframe');
+        WVJBIframe.style.display = 'none';
+        WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+        document.documentElement.appendChild(WVJBIframe);
+        setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+    }
+    /*与OC交互的所有JS方法都要放在此处注册，才能调用通过JS调用OC或者让OC调用这里的JS*/
+    setupWebViewJavascriptBridge(function(bridge) {
+         bridge.registerHandler('callback', function(data, responseCallback) {
+            callback(data);
+            responseCallback('js执行过了'+data);
+        })
+    })
+    
 </script>
 
-<button style="text-align:center;height:50px;width:200px;font-size:30px;" onclick="shareClick()">调用JS</button>
+<button style="text-align:center;height:80px;width:400px;font-size:50px;" onclick="shareClick()">调用JS</button>
 
 </body>
 </html>

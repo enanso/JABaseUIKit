@@ -55,13 +55,13 @@ extension UIColor {
     //暗黑色适配
     class func dark(light:Any,dark:Any) -> UIColor {
         
-        let lightColor:UIColor = self.any(value: light)
+        let lightColor:UIColor = any(value: light)
         
         if #available(iOS 13.0, *) {
                         
             if UITraitCollection.current.userInterfaceStyle == .dark {
                 //暗黑模式
-                return self.any(value: dark)
+                return any(value: dark)
             } else {
                 //其他模式
                 return lightColor

@@ -44,13 +44,12 @@ TODO: Add long description of the pod here.
   #  参考：https://blog.csdn.net/BUG_delete/article/details/100777277
   #  1.图片文件夹，如果资源文件不多，使用s.resources = 'JABaseUIKit/Classes/Resource/*.png'比较方便
   #  2.s.resource_bundles生成的资源文件，会生成一个bundle文件，使用的时候就是要先获取到这个bundle，生成静态库时可避免同名文件重复
-  #    NSString * path = [[NSBundle bundleForClass:classType] pathForResource:@"SourceBundleName" ofType:@"bundle"];
   #
   #  #  #  #  #  #  #
-  s.resources = 'JABaseUIKit/Classes/Resource/*.png'
-  # s.resource_bundles = {
-  #   'JABaseUIKit' => ['JABaseUIKit/Assets/*.png']
-  # }
+  #s.resources = 'JABaseUIKit/Classes/Resource/*.png'
+   s.resource_bundles = {
+     'JABaseUIKit' => ['JABaseUIKit/Assets/*.png']
+   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import WebViewJavascriptBridge
 import SnapKit
 /**
 JS交互:https://www.jianshu.com/p/dadd1bd83752
@@ -23,14 +24,67 @@ class WSKWeakScriptMessageDelegate: NSObject,WKScriptMessageHandler {
         self.scriptDelegate = scriptDelegate
     }
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        self.scriptDelegate.userContentController(userContentController, didReceive: message)
+        scriptDelegate.userContentController(userContentController, didReceive: message)
     }
 }
 
-public class QSWebViewController: QSViewController, WKUIDelegate {
+open class QSWebViewController: QSViewController, WKUIDelegate {
+    
+    // MARK: Public
+    @objc public init(url : String) {
+        super.init(nibName: nil, bundle: nil)
+        self.url = url
+    }
+
+    public override func viewDidLoad() {
+        if url.count > 0 {
+            initInterface()
+            let URL = URL(string: url)!
+            
+            if (URL.host != nil) {
+                let request = URLRequest(url: URL)
+                webView.load(request)
+            }else {
+                do {
+                    let htmlString = try NSString.init(contentsOfFile: url, encoding: String.Encoding.utf8.rawValue)
+                    webView.loadHTMLString(htmlString as String  , baseURL: NSURL.fileURL(withPath: url))
+                }catch let err as NSError{
+                    print("====本地加载出错:%@",err.description)
+                }
+            }
+        }
+        super.viewDidLoad()
+    }
+    
+    // MARK: Private
+    private init(){
+        super.init(nibName: nil, bundle: nil)
+        self.view.backgroundColor = kRandomColor()
+    }
+    //必须实现
+    @available(*, unavailable)
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
+    }
+    //加载URL
+    private var url: String = ""
+    /// 布局UI
+    private func initInterface() -> () {
+        //webView布局
+        webView.snp.makeConstraints{(make) in
+            make.left.right.top.bottom.equalTo(0)
+        }
+        //progressView布局
+        progressView.snp.makeConstraints{(make) in
+            make.left.top.equalTo(0)
+            make.height.equalTo(3)
+            make.right.equalTo(50)
+        }
+    }
     
     // WKWebView
-    lazy var webView: WKWebView = {
+    private lazy var webView: WKWebView = {
         ///偏好设置
         let preferences = WKPreferences()
         preferences.javaScriptEnabled = true
@@ -63,7 +117,7 @@ public class QSWebViewController: QSViewController, WKUIDelegate {
         return webView
      }()
     // 进度条
-    public lazy var progressView:UIProgressView = {
+    private lazy var progressView:UIProgressView = {
         let progressView = UIProgressView()
         progressView.tintColor = UIColor.orange
         progressView.trackTintColor = UIColor.white
@@ -71,81 +125,43 @@ public class QSWebViewController: QSViewController, WKUIDelegate {
         self.view.addSubview(progressView)
         return progressView
     }()
-    //不展示后缀按钮
-    @objc public var url: String?
-    
-    public override func viewDidLoad() {
-        if self.url!.count > 0 {
-            initInterface()
-//            let request = URLRequest(url: URL(string: self.url!)!)
-//            self.webView.load(request)
-//            //加载本地文件
-//            let filePath=Bundle.main.path(forResource: "qsmain", ofType: "html")
-            do {
-                let htmlString = try NSString.init(contentsOfFile: self.url!, encoding: String.Encoding.utf8.rawValue)
-                self.webView.loadHTMLString(htmlString as String  , baseURL: NSURL.fileURL(withPath: self.url!))
-            }catch{}
-        }
-        super.viewDidLoad()
-    }
-    
-    /// 布局UI
-    private func initInterface() -> () {
-        //webView布局
-        self.webView.snp.makeConstraints{(make) in
-            make.left.right.top.bottom.equalTo(0)
-        }
-        //progressView布局
-        self.progressView.snp.makeConstraints{(make) in
-            make.left.top.equalTo(0)
-            make.height.equalTo(3)
-            make.right.equalTo(50)
-        }
-    }
 }
-
+// MARK: ========= WKWebView代理方法实现及进度条 =========
 extension QSWebViewController: WKNavigationDelegate{
     
     // 监听网页加载进度
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
-        self.progressView.progress = Float(self.webView.estimatedProgress)
-        print("===加载进度===")
-        print(self.webView.estimatedProgress)
+        progressView.progress = Float(webView.estimatedProgress)
     }
     
     // 页面开始加载时调用
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        print("===开始加载...===")
+
     }
     
     // 当内容开始返回时调用
     public func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!){
-        print("===当内容开始返回...===")
+
     }
     
     // 页面加载完成之后调用
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
         //DLog(message: "页面加载完成...", other: "")
         /// 获取网页title
-        self.title = self.webView.title
+        self.title = webView.title
         
-        UIView.animate(withDuration: 0.5) {
-            self.progressView.isHidden = true
+        UIView.animate(withDuration: 0.5) { [self] in
+            progressView.isHidden = true
         }
-//        //获取当前网页的html
-//        webView.evaluateJavaScript("document.documentElement.innerHTML", completionHandler: nil)
-
-//        let attribstr = try! NSAttributedString.init(data:(str?.data(using: String.Encoding.unicode))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
-        
     }
     
     // 页面加载失败时调用
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error){
         //DLog(message: "页面加载失败...", other: "")
-        UIView.animate(withDuration: 0.5) {
-            self.progressView.progress = 0.0
-            self.progressView.isHidden = true
+        UIView.animate(withDuration: 0.5) { [self] in
+            progressView.progress = 0.0
+            progressView.isHidden = true
         }
         /// 弹出提示框点击确定返回
         let alertView = UIAlertController.init(title: "提示", message: "加载失败", preferredStyle: .alert)
@@ -155,9 +171,17 @@ extension QSWebViewController: WKNavigationDelegate{
         alertView.addAction(okAction)
         self.present(alertView, animated: true, completion: nil)
     }
- 
 }
+
+// MARK: ========= WKWebView交互JS处理 =========
 extension QSWebViewController: WKScriptMessageHandler{
+    
+    //JS回调
+    func callback(with closure: WVJBResponseCallback?, data: [String: Any]) {
+        if let call = closure {
+            call(data as NSDictionary)
+        }
+    }
     ///接收js调用方法
     public func userContentController(_ userContentController: WKUserContentController,
                                didReceive message: WKScriptMessage) {
@@ -165,5 +189,28 @@ extension QSWebViewController: WKScriptMessageHandler{
         let body = message.body
         print("JS 交互名称:\(message.name)")
         print("JS 传参:\(body)")
+        switch message.name {
+        case "share":
+            ///不接收参数时直接不处理message.body即可,不用管Html传了什么
+            share(param: message.body)
+            break
+        case "blueResponse":
+            //blueRequest(string: message.body as! String)
+            break
+        case "greenResponse":
+            //greenRequest(int: message.body as! Int)
+            break
+        case "yellowResponse":
+            //yellowRequest(array: message.body as! [String])
+            break
+        default:
+            break
+        }
+    }
+    
+    // MARK: Private
+    //交互实现方法
+    private func share(param: Any)->Void {
+        
     }
 }

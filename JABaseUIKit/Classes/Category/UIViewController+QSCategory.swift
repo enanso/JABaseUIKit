@@ -24,10 +24,10 @@ public extension UIViewController{
         //加导航栏去往下一页
         func naveToNextPage(vc:UIViewController) -> JumpType {
             
-            if vc.type == JumpType.push || vc.type == JumpType.adNavc {
-                return JumpType.push//有导航栏的情况
+            if vc.type == .push || vc.type == .adNavc {
+                return .push//有导航栏的情况
             }else{
-                return JumpType.adNavc//无导航栏的情况
+                return .adNavc//无导航栏的情况
             }
         }
         
@@ -35,9 +35,9 @@ public extension UIViewController{
         func backWithPop(vc:UIViewController) -> Void{
             
             //非在容器内的情况
-            if vc.type != JumpType.nonJump || vc.type != JumpType.nonNavc {
+            if vc.type != .nonJump || vc.type != .nonNavc {
                 
-                if vc.type == JumpType.push {
+                if vc.type == .push {
                     vc.navigationController?.popViewController(animated: true)//直接push的情况
                 }else{
                     vc.dismiss(animated: true, completion: nil)
@@ -65,7 +65,7 @@ public extension UIViewController{
     /**获取当前控制器**/
     static func current() -> UIViewController{
         //获取根视图
-        var currentViewController:UIViewController = self.root()
+        var currentViewController:UIViewController = root()
         
         let runLoopFind = true
         
@@ -120,7 +120,6 @@ public extension UIViewController{
         var responser = vc.next
         var ExitResponer = true
         while(ExitResponer == true){
-            
             //print("类型为",responser?.classForCoder)
             if( responser?.classForCoder != target && responser != nil){
                 responser = responser!.next
@@ -136,21 +135,19 @@ public extension UIViewController{
         
         //页面跳转方式
         switch type {
-            case .push?:do {
-                
-                self.navigationController!.pushViewController(vc, animated: animated)
-                }
-            case .adNavc?:do {
-                let navc:UINavigationController = UINavigationController(rootViewController: vc)
-                self.present(navc, animated: true, completion: completion)
-                }
-            case .nonPush?:do {
-                self.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-                self.present(vc, animated: true, completion: completion)
-                }
-            default:do {
+        case .push?:do {
+            
+            self.navigationController!.pushViewController(vc, animated: animated)
             }
-                break
+        case .adNavc?:do {
+            let navc:UINavigationController = UINavigationController(rootViewController: vc)
+            self.present(navc, animated: true, completion: completion)
+            }
+        case .nonPush?:do {
+            self.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+            self.present(vc, animated: true, completion: completion)
+            }
+        default:do {}
         }
     }
 }
