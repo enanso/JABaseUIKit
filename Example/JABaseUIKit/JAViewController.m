@@ -40,10 +40,6 @@
         button.tag = 100 + i;
         [button addTarget:self action:@selector(btnClick:) forControlEvents:(UIControlEventTouchUpInside)];
     }
-    
-    UIImageView *a = [[UIImageView alloc] initWithFrame:CGRectMake(0, 400, 80, 80)];
-    [self.view addSubview:a];
-    a.image = [UIImage imageNamed:@"aaa"];
 }
 
 - (void)btnClick:(UIButton *)sender {
@@ -100,7 +96,7 @@
             break;
         case 3:{
             QSCollectionViewController *vc = [[QSCollectionViewController alloc] initWithCount:7 height:90];
-            
+            vc.space = 5;
             for (int i = 0; i < 10; i++) {
                 
                 NSMutableArray *array = [[NSMutableArray alloc] init];

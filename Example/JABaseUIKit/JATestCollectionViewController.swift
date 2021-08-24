@@ -12,6 +12,7 @@ class JATestCollectionViewController: QSCollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.space = 5.0
         let arr: [String] = ["线程安全问题","defer使⽤场景","throws 和 rethrows 的⽤法","lazy的作⽤","Swift闭包详解","⾃动闭包","Map函数","flatMap函数","CompactMap函数","filter函数","for...Each","Reduce 函数"]
         dataSource.addObjects(from: arr)
     }

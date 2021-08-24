@@ -14,6 +14,8 @@ open class QSCollectionViewController: QSViewController {
     private var count:Int = 1
     //自定义collectionView单行item高度，默认：80.0
     private var height:CGFloat = 80.0
+    //item之间的默认间距
+    @objc open var space:CGFloat = 0.0
     
     // MARK: Public
     @objc public init(count: Int, height: CGFloat) {
@@ -132,22 +134,22 @@ extension QSCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     //单个Item大小: layout.itemSize = CGSize(width: width, height: height)
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        let width = kWidth / CGFloat(count)
+        let width = (kWidth - space * CGFloat((count + 1))) / CGFloat(count)
         return CGSize(width: width, height: height)
     }
     
     //设置边距: layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: space, left: space, bottom: 0, right: space)
     }
     
     //每个相邻的layout的上下间隔: layout.minimumLineSpacing = 0.0
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat{
-        return 0.0
+        return space
     }
     //每个相邻layout的左右间隔: layout.minimumInteritemSpacing = 0.0
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat{
-        return 0.0
+        return space
     }
     //分区头部size设置
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -173,9 +175,6 @@ extension QSCollectionViewController: UICollectionViewDataSource {
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:QSBaseCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellMIdentifier, for: indexPath as IndexPath) as! QSBaseCollectionViewCell
-        
- 
-        cell.backgroundColor = kRandomColor()
         let textColor = kRandomColor()
         if textColor != .white {
             cell.label.textColor = textColor;

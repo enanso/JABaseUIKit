@@ -23,7 +23,6 @@ class QSBaseCollectionViewCell: UICollectionViewCell {
     
     // 图片
     public lazy var imgView:UIImageView = {
-        
         let image = Bundle.image(name: "placeholder@2x").scaleToSize(w: 35, h: 35)
         let imageView = UIImageView(image: image)
         //设置图片显示方式
@@ -53,6 +52,7 @@ class QSBaseCollectionViewCell: UICollectionViewCell {
     
     // 构建UI
     private func setUI(){
+        self.backgroundColor = kRandomColor()
         contentView.addSubview(label)
         contentView.addSubview(imgView)
 
