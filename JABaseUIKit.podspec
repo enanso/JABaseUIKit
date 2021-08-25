@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JABaseUIKit'
-  s.version = '0.1.2'
+  s.version = '0.1.1'
   s.summary          = '基础UI组件库-JABaseUIKit'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
   # 支持 swift 版本
   s.swift_version = '5.0'
   # 支持OC版本
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
   
   # 不考虑文件分层
   s.source_files = 'JABaseUIKit/Classes/**/*'
