@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/enanso/JABaseUIKit'
+  s.homepage         = 'https://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@github.com/enanso/JABaseUIKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'lanmemory@163.com' => 'lanmemory@163.com' }
