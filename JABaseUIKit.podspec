@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'lanmemory@163.com' => 'lanmemory@163.com' }
-  s.source           = { :git => 'https://github.com/enanso/JABaseUIKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://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@github.com/enanso/JABaseUIKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   
   # 支持 swift 版本
