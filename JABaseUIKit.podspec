@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JABaseUIKit'
-  s.version          = '0.1.0'
+  s.version = '0.1.0'
   s.summary          = '基础UI组件库-JABaseUIKit'
 
 # This description is used to generate tags and improve search results.
@@ -35,6 +35,7 @@ TODO: Add long description of the pod here.
   
   # 不考虑文件分层
   s.source_files = 'JABaseUIKit/Classes/**/*'
+  # 静态库依赖
   s.static_framework = true
   s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' ,'OTHER_LDFLAGS' => '"-ObjC"'}
 
@@ -58,6 +59,7 @@ TODO: Add long description of the pod here.
   # OC依赖库
   s.dependency 'Masonry'
   s.dependency 'WebViewJavascriptBridge'
+  
   # Swift 依赖库
   s.dependency 'SnapKit'
   s.dependency 'SwiftyJSON'

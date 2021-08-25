@@ -1,4 +1,4 @@
-framework module JABaseUIKit {
+module JABaseUIKit {
   umbrella header "JABaseUIKit-umbrella.h"
 
   export *

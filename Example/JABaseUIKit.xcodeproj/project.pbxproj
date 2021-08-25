@@ -10,7 +10,6 @@
 		211A18B426CA3B63005EC0EF /* qsmain.html in Resources */ = {isa = PBXBuildFile; fileRef = 211A18B326CA3B63005EC0EF /* qsmain.html */; };
 		218A347A26C52A4100CF046F /* JAFirstSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A347926C52A4100CF046F /* JAFirstSwift.swift */; };
 		21F8C2A426CF5DDC00159367 /* JATestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F8C2A326CF5DDC00159367 /* JATestCollectionViewController.swift */; };
-		35109D627B4BC97DDDDB368C /* Pods_JABaseUIKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBEC0EF19AD45419ECF174FA /* Pods_JABaseUIKit_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -26,7 +25,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		9D6C00471834D9D90192BD06 /* Pods_JABaseUIKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31274816BA04F71E6F23B3CC /* Pods_JABaseUIKit_Example.framework */; };
+		883ECD2D091711BE40AE401A /* libPods-JABaseUIKit_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D7E014967E1A6A0CF217EE /* libPods-JABaseUIKit_Example.a */; };
+		CF939284C8990FE564143ABA /* libPods-JABaseUIKit_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A551753F51EBC8C3D9C88B /* libPods-JABaseUIKit_Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 		218A347826C52A4000CF046F /* JABaseUIKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JABaseUIKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		218A347926C52A4100CF046F /* JAFirstSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAFirstSwift.swift; sourceTree = "<group>"; };
 		21F8C2A326CF5DDC00159367 /* JATestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JATestCollectionViewController.swift; sourceTree = "<group>"; };
-		31274816BA04F71E6F23B3CC /* Pods_JABaseUIKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABaseUIKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561957F5C58B4DDC4F150022 /* Pods-JABaseUIKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABaseUIKit_Example.release.xcconfig"; path = "Target Support Files/Pods-JABaseUIKit_Example/Pods-JABaseUIKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* JABaseUIKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JABaseUIKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,10 +67,11 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		60A551753F51EBC8C3D9C88B /* libPods-JABaseUIKit_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JABaseUIKit_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F1A98757A8F98A360EFAE1A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CBEC0EF19AD45419ECF174FA /* Pods_JABaseUIKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JABaseUIKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D7E014967E1A6A0CF217EE /* libPods-JABaseUIKit_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JABaseUIKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC406166520A10FE5AC0C400 /* Pods-JABaseUIKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABaseUIKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-JABaseUIKit_Tests/Pods-JABaseUIKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E5271F9D02455177EF647552 /* Pods-JABaseUIKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JABaseUIKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-JABaseUIKit_Example/Pods-JABaseUIKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,7 +84,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				9D6C00471834D9D90192BD06 /* Pods_JABaseUIKit_Example.framework in Frameworks */,
+				883ECD2D091711BE40AE401A /* libPods-JABaseUIKit_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				35109D627B4BC97DDDDB368C /* Pods_JABaseUIKit_Tests.framework in Frameworks */,
+				CF939284C8990FE564143ABA /* libPods-JABaseUIKit_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +141,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				31274816BA04F71E6F23B3CC /* Pods_JABaseUIKit_Example.framework */,
-				CBEC0EF19AD45419ECF174FA /* Pods_JABaseUIKit_Tests.framework */,
+				D8D7E014967E1A6A0CF217EE /* libPods-JABaseUIKit_Example.a */,
+				60A551753F51EBC8C3D9C88B /* libPods-JABaseUIKit_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,7 +218,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				B0603AD3B730CFA1547666F4 /* [CP] Embed Pods Frameworks */,
 				259C6CA1F37746ADFB83339A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -350,30 +349,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JABaseUIKit_Example/Pods-JABaseUIKit_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B0603AD3B730CFA1547666F4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JABaseUIKit_Example/Pods-JABaseUIKit_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JABaseUIKit_Example/Pods-JABaseUIKit_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E8452854CA73EEEBE0AD0B9E /* [CP] Check Pods Manifest.lock */ = {
