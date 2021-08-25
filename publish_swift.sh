@@ -75,7 +75,7 @@ remoteVerifyLib(){
 #发布库
 publishLib(){
     echo -e "${GREEN}\n第六步：准备发布${tag}版本${NC}⏰⏰⏰"
-    if ! pod repo push ${SpecName} --allow-warnings; then echo -e "${RED}发布${tag}版本失败${NC}🌧🌧🌧"; exit 1; fi
+    if ! pod repo push EnanSpecs ${SpecName} --allow-warnings; then echo -e "${RED}发布${tag}版本失败${NC}🌧🌧🌧"; exit 1; fi
     echo -e "${GREEN}发布${tag}版本成功${NC}🚀🚀🚀"
 }
 

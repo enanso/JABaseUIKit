@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JABaseUIKit'
-  s.version = '0.1.1'
+  s.version = '0.1.2'
   s.summary          = '基础UI组件库-JABaseUIKit'
 
 # This description is used to generate tags and improve search results.
