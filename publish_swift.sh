@@ -45,7 +45,7 @@ pushAndTag(){
     if ! git commit -m ${commitText}
     then
         echo -e "${RED}git commit失败${NC}🌧🌧🌧"
-        exit 1
+#        exit 1
     fi
     if ! git push
     then
