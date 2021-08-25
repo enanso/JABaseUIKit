@@ -1,5 +1,5 @@
 PODS:
-  - JABaseUIKit (0.1.0):
+  - JABaseUIKit (0.1.1):
     - Masonry
     - SnapKit
     - SwiftyJSON
@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JABaseUIKit: bb2255a88a3fdff9ad4d328aeffceea67689f65b
+  JABaseUIKit: f44a9184b393f0b9691b9fecbffa5f538d407ef7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
