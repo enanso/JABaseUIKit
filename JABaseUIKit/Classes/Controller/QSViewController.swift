@@ -2,7 +2,7 @@
 //  QSViewController.swift
 //  JABaseUIKit
 //
-//  Created by Qiyeyun7 on 2021/8/12.
+//  Created by JABase on 2021/8/12.
 // swift版 -- 基础控制器
 
 import UIKit

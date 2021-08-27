@@ -1,6 +1,6 @@
 use_modular_headers!
-#use_frameworks!
-#platform :ios, '9.0'
+use_frameworks!
+platform :ios, '10.0'
 source 'https://github.com/CocoaPods/Specs.git'
 target 'JABaseUIKit_Example' do
   pod 'JABaseUIKit', :path => '../'

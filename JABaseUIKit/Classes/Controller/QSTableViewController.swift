@@ -2,7 +2,7 @@
 //  QSTableViewController.swift
 //  JABaseUIKit
 //
-//  Created by Qiyeyun7 on 2021/8/19.
+//  Created by JABase on 2021/8/19.
 // swift版 -- 基础tableView控制器
 
 import UIKit

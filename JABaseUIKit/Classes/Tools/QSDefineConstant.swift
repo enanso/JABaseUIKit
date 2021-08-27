@@ -2,7 +2,7 @@
 //  QSDefineConstant.swift
 //  JABaseUIKit
 //
-//  Created by Qiyeyun7 on 2021/8/16.
+//  Created by JABase on 2021/8/16.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  UIImage+QSCategory.swift
 //  JABaseUIKit
 //
-//  Created by Qiyeyun7 on 2021/8/16.
+//  Created by JABase on 2021/8/16.
 //
 
 import Foundation
@@ -11,18 +11,14 @@ extension UIImage {
     
     /**图片缩放到指定大小尺寸**/
     func scaleToSize(w:CGFloat,h:CGFloat)->UIImage{
-        
         // 创建一个bitmap的context,并把它设置成为当前正在使用的context
         UIGraphicsBeginImageContext(CGSize(width: w, height: h));
         // 绘制改变大小的图片
         self.draw(in: CGRect(x: 0, y: 0, width:w, height:h))
-        
         // 从当前context中创建一个改变大小后的图片
         let scaledImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        
         //使当前的context出堆栈
         UIGraphicsEndImageContext();
-        
         // 返回新的改变大小后的图片
         return scaledImage;
     }

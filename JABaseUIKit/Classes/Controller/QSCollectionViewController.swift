@@ -2,7 +2,7 @@
 //  QSCollectionViewController.swift
 //  JABaseUIKit
 //
-//  Created by Qiyeyun7 on 2021/8/20.
+//  Created by JABase on 2021/8/20.
 //
 
 import UIKit
