@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# 加入”--use-modular-headers“，为了兼容swift库
 #Config Color
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -8,7 +9,6 @@ NC='\033[0m' # No Color
 #const
 source1=https://github.com/CocoaPods/Specs.git
 source2=https://github.com/enanso/EnanSpecs.git
-#source2=http://git.qpaas.com/PaasPods/PaasSpecs.git
 commitText=""
 tag=""
 result=`find ./ -maxdepth 1 -type f -name "*.podspec"`
@@ -36,7 +36,7 @@ updatePodspec() {
 #本地验证Lib
 localVerifyLib(){
     echo -e "${GREEN}\n第三步：开始本地验证：pod lib lint ${NC}⏰⏰⏰"
-    if ! pod lib lint --skip-import-validation --allow-warnings --use-libraries --sources="${source1},${source2}"; then echo -e "${RED}验证失败${NC}🌧🌧🌧"; exit 1; fi
+    if ! pod lib lint --skip-import-validation --allow-warnings --use-libraries --use-modular-headers --sources="${source1},${source2}"; then echo -e "${RED}验证失败${NC}🌧🌧🌧"; exit 1; fi
     echo -e "${GREEN}验证成功${NC}🚀🚀🚀"
 }
 
@@ -70,14 +70,14 @@ pushAndTag(){
 #远程验证
 remoteVerifyLib(){
     echo -e "${GREEN}\n可省步：开始远程验证：pod spec lint ${NC}⏰⏰⏰"
-    if ! pod spec lint --skip-import-validation --allow-warnings --use-libraries --sources="${source1},${source2}"; then echo -e "${RED}验证失败${NC}🌧🌧🌧"; exit 1; fi
+    if ! pod spec lint --skip-import-validation --allow-warnings --use-libraries --use-modular-headers --sources="${source1},${source2}"; then echo -e "${RED}验证失败${NC}🌧🌧🌧"; exit 1; fi
     echo -e "${GREEN}验证成功${NC}🚀🚀🚀"
 }
 
 #发布库
 publishLib(){
     echo -e "${GREEN}\n第六步：准备发布${tag}版本${NC}⏰⏰⏰"
-    if ! pod repo push EnanSpecs ${SpecName} --allow-warnings --sources="${source1},${source2}" --allow-warnings --use-libraries --skip-import-validation; then echo -e "${RED}发布${tag}版本失败${NC}🌧🌧🌧"; exit 1; fi
+    if ! pod repo push EnanSpecs ${SpecName} --allow-warnings --sources="${source1},${source2}" --allow-warnings --use-libraries --use-modular-headers --skip-import-validation; then echo -e "${RED}发布${tag}版本失败${NC}🌧🌧🌧"; exit 1; fi
     echo -e "${GREEN}发布${tag}版本成功${NC}🚀🚀🚀"
 }
 

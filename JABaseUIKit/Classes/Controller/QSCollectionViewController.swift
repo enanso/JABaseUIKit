@@ -39,19 +39,19 @@ open class QSCollectionViewController: QSViewController {
         self.view.addSubview(collectionView)
         return collectionView
     }()
-    // 数据源数组，可存一位数组或者二维数组
+    // 数据源数组，可存一维数组或者二维数组
     @objc public lazy var dataSource:NSMutableArray = {
         let data = NSMutableArray()
         return data
     }()
     
-    // 数据源数组，可存一位数组或者二维数组
+    // 分区头部数据，以每个分区所在的数据数组的指针地址作为key
     @objc public lazy var headDict:NSMutableDictionary = {
         let dict = NSMutableDictionary()
         return dict
     }()
     
-    // 数据源数组，可存一位数组或者二维数组
+    // 分区尾部数据，以每个分区所在的数据数组的指针地址作为key
     @objc public lazy var footerDict:NSMutableDictionary = {
         let dict = NSMutableDictionary()
         return dict

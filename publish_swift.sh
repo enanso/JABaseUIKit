@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# 加入”--use-modular-headers“，为了兼容swift库
 
 #Config Color
 RED='\033[0;31m'
@@ -75,6 +76,9 @@ remoteVerifyLib(){
 #发布库
 publishLib(){
     echo -e "${GREEN}\n第六步：准备发布${tag}版本${NC}⏰⏰⏰"
+#    if ! pod trunk push ${SpecName}
+# 查看注册信息:pod trunk me
+# 过期重新注册：pod trunk register 邮箱 用户名 --verbose,如：pod trunk register abcd@qq.com 'name' --verbose,收到确认邮件,点击链接，即可完成注册
     if ! pod repo push EnanSpecs ${SpecName} --allow-warnings; then echo -e "${RED}发布${tag}版本失败${NC}🌧🌧🌧"; exit 1; fi
     echo -e "${GREEN}发布${tag}版本成功${NC}🚀🚀🚀"
 }
