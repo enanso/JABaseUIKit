@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
     
-    NSArray *arr = @[@"基础VC",@"WKwebVC",@"TableViewVC",@"CollectionView",@"Swift问题解读"];
+    NSArray *arr = @[@"基础VC",@"WKwebVC",@"TableViewVC",@"CollectionView",@"Swift问题解读",@"常用技能知识测试"];
     for (int i = 0; i < arr.count; i++) {
         
         NSString *title = arr[i];
@@ -130,6 +130,14 @@
             break;
         case 4:{
             JATestCollectionViewController *vc = [[JATestCollectionViewController alloc] initWithCount:4 height:100];
+            vc.modalPresentationStyle  = UIModalPresentationFullScreen;
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+            nav.modalPresentationStyle  = UIModalPresentationFullScreen;
+            [self presentViewController:nav animated:YES completion:nil];
+        }
+            break;
+        case 5:{
+            JAKnowledgeViewController *vc = [[JAKnowledgeViewController alloc] initWithCount:4 height:100];
             vc.modalPresentationStyle  = UIModalPresentationFullScreen;
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
             nav.modalPresentationStyle  = UIModalPresentationFullScreen;

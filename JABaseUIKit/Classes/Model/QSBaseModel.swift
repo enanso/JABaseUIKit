@@ -63,16 +63,16 @@ open class BaseModel: QSBaseModel, Decodable, Encodable{
     public var moneny: Double?
     public var books: [BookModel]?
     
-    public var nick: String = "" {
-        // newValue
-        willSet{
-            print("父类willSet被调用,newValue: \(newValue)")
-        }
-        // oldValue
-        didSet{
-            print("父类didSet被调用,oldValue: \(oldValue)")
-        }
-    }
+//    public var nick: String = "" {
+//        // newValue
+//        willSet{
+//            print("父类willSet被调用,newValue: \(newValue)")
+//        }
+//        // oldValue
+//        didSet{
+//            print("父类didSet被调用,oldValue: \(oldValue)")
+//        }
+//    }
 }
 
 open class BookModel: QSBaseModel, Decodable, Encodable{
