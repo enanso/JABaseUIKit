@@ -10,6 +10,7 @@
 		2119E16726DC70C30091825C /* BitOperatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119E16626DC70C30091825C /* BitOperatedModel.swift */; };
 		2119E16926DC75580091825C /* JAKnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119E16826DC75580091825C /* JAKnowledgeViewController.swift */; };
 		211A18B426CA3B63005EC0EF /* qsmain.html in Resources */ = {isa = PBXBuildFile; fileRef = 211A18B326CA3B63005EC0EF /* qsmain.html */; };
+		212961BF26DDF79100F69ED2 /* NSString+QSCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212961BE26DDF79100F69ED2 /* NSString+QSCategory.swift */; };
 		218A347A26C52A4100CF046F /* JAFirstSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A347926C52A4100CF046F /* JAFirstSwift.swift */; };
 		21F8C2A426CF5DDC00159367 /* JATestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F8C2A326CF5DDC00159367 /* JATestCollectionViewController.swift */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -48,6 +49,7 @@
 		2119E16626DC70C30091825C /* BitOperatedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitOperatedModel.swift; sourceTree = "<group>"; };
 		2119E16826DC75580091825C /* JAKnowledgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAKnowledgeViewController.swift; sourceTree = "<group>"; };
 		211A18B326CA3B63005EC0EF /* qsmain.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = qsmain.html; sourceTree = "<group>"; };
+		212961BE26DDF79100F69ED2 /* NSString+QSCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+QSCategory.swift"; sourceTree = "<group>"; };
 		218A347826C52A4000CF046F /* JABaseUIKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JABaseUIKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		218A347926C52A4100CF046F /* JAFirstSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAFirstSwift.swift; sourceTree = "<group>"; };
 		21F8C2A326CF5DDC00159367 /* JATestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JATestCollectionViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		2119E16226DC706D0091825C /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				212961BD26DDF78700F69ED2 /* Tools */,
 				2119E16526DC70900091825C /* Controller */,
 				2119E16426DC70900091825C /* Mode */,
 				2119E16326DC70900091825C /* View */,
@@ -138,6 +141,14 @@
 				2119E16826DC75580091825C /* JAKnowledgeViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		212961BD26DDF78700F69ED2 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				212961BE26DDF79100F69ED2 /* NSString+QSCategory.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		3260D5A1B4B75F8A3302765F /* Pods */ = {
@@ -444,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* JAAppDelegate.m in Sources */,
+				212961BF26DDF79100F69ED2 /* NSString+QSCategory.swift in Sources */,
 				2119E16926DC75580091825C /* JAKnowledgeViewController.swift in Sources */,
 				218A347A26C52A4100CF046F /* JAFirstSwift.swift in Sources */,
 				6003F5A7195388D20070C39A /* JAViewController.m in Sources */,
@@ -585,8 +597,10 @@
 				GCC_PREFIX_HEADER = "JABaseUIKit/JABaseUIKit-Prefix.pch";
 				INFOPLIST_FILE = "JABaseUIKit/JABaseUIKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				ORDER_FILE = ./dataReset.order;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JABaseUIKit/JABaseUIKit_Example-Bridging-Header.h";
@@ -609,8 +623,10 @@
 				GCC_PREFIX_HEADER = "JABaseUIKit/JABaseUIKit-Prefix.pch";
 				INFOPLIST_FILE = "JABaseUIKit/JABaseUIKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				ORDER_FILE = ./dataReset.order;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JABaseUIKit/JABaseUIKit_Example-Bridging-Header.h";

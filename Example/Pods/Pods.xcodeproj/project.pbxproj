@@ -27,7 +27,6 @@
 		1D77393E560E829E62140737252AD262 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 8409C5A2E72B8123A0863570328D7D49 /* MASLayoutConstraint.m */; };
 		1D8A832EB42FEC4CFB44186242D7B578 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E2155DEA6B48F549C83AA4ACAFA01E65 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20D91ABEC5591883EBF2AB361E2E7A06 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81113609C2F0ADB0DDAF4CF16F044D9E /* ConstraintMakerRelatable.swift */; };
-		217EC9F626DCB97F00B27F37 /* NSString+QSCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EC9F526DCB97F00B27F37 /* NSString+QSCategory.swift */; };
 		2185DACD756B3764134170E495AB5333 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D7A6644ADD57BF0002C29E2A3DE51C /* ConstraintMakerPriortizable.swift */; };
 		227454048DE70245DF81879735CEFE2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6406D347F5B7E18CF968F77629C4F06E /* Foundation.framework */; };
 		22BC2823F57DC05FBFCE440C3EDCFF26 /* QSCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B0079E3880CC3CE942396C1D80C982 /* QSCollectionViewController.swift */; };
@@ -213,7 +212,6 @@
 		1EB9EFB33336E1C22420689564847E9C /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		201FED7BBEA0E943ED55272E34D317D1 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
-		217EC9F526DCB97F00B27F37 /* NSString+QSCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+QSCategory.swift"; sourceTree = "<group>"; };
 		22D1DC08F6AA5B4F6A10CCD3BC8F7666 /* Masonry-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Masonry-Info.plist"; sourceTree = "<group>"; };
 		23A02FB1924F18BA498FFE67E1DC4225 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		2671C2241F26A1878CD43C3E1F8AC646 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
@@ -611,7 +609,6 @@
 				A3E871054C2BE941AAFAE77985C6C53F /* UIImage+QSCategory.swift */,
 				85C190C6B27842ED5FEC77E8BB982592 /* UIView+QSCategory.swift */,
 				D6C4EE51F4EE84C5FD2E541A6CAB7861 /* UIViewController+QSCategory.swift */,
-				217EC9F526DCB97F00B27F37 /* NSString+QSCategory.swift */,
 			);
 			name = Category;
 			path = JABaseUIKit/Classes/Category;
@@ -1146,7 +1143,6 @@
 				00E1E07343C3D50C28312EDD11A693EC /* QSDecoder.swift in Sources */,
 				87059B135D8B3122DB3A196A64BC3957 /* QSDefineConstant.swift in Sources */,
 				FB01BA237CB68C72260AFF2D1D4C82E0 /* QSTableViewController.swift in Sources */,
-				217EC9F626DCB97F00B27F37 /* NSString+QSCategory.swift in Sources */,
 				7818CA0085431060E0E084F6D187552F /* QSViewController.swift in Sources */,
 				A8715C51229E6C8F4F28FE7158624760 /* QSWebViewController.swift in Sources */,
 				E13ED30A83442F7629EE03D9340651DA /* UIColor+QSCategory.swift in Sources */,

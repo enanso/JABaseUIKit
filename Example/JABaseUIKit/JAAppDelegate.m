@@ -9,7 +9,9 @@
 #import "JAAppDelegate.h"
 
 @implementation JAAppDelegate
-
++ (void)load {
+    NSLog(@"====我在JAAppDelegate编译了");
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.

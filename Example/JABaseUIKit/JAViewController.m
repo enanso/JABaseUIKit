@@ -21,7 +21,9 @@
 @end
 
 @implementation JAViewController
-
++ (void)load {
+    NSLog(@"====我在JAViewController编译了");
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

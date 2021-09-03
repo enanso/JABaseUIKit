@@ -65,14 +65,21 @@ extension JAKnowledgeViewController{
     }
     
     private func testSwift(value: Any)->Void{
-//        guard !(value is String || value is NSString) else {
-//            return
-//        }
-        let str: String = value as! String
         
+        guard let str:String = value as? String else {
+            return
+        }
         switch str {
 
         case "位运算两值互换": do {
+            /**
+             let a = 3
+             let b = 5
+             
+             a = b - a
+             b = b - a
+             a = a + b
+             */
             let result = BitOperatedModel.exchangeValue(a: 15, b: 2)
             print("位运算输入返回结果：",result.first,result.second)
         }
@@ -80,7 +87,7 @@ extension JAKnowledgeViewController{
             guard let num = Int(self.num) else { return}
             print("原始值：\(num) 二进制：\(self.num.decimalToBinary())")
             print("取反值：\(~num) 二进制：\(String(~num).decimalToBinary())")
-            print("参考：https://blog.csdn.net/Runner1st/article/details/86515884")
+            print("取反运算参考：https://blog.csdn.net/Runner1st/article/details/86515884")
         }
         case "二进制 -> 八进制": do {self.num.binaryToOctal()}
         case "二进制 -> 十进制": do {self.num.binaryTodecimal()}
@@ -93,6 +100,7 @@ extension JAKnowledgeViewController{
         case "十进制 -> 二进制": do {self.num.decimalToBinary()}
         case "十进制 -> 八进制": do {self.num.decimalToOctal()}
         case "十进制 -> 十六进制": do {self.num.decimalToHexadecimal()}
+            
         case "十六进制 -> 二进制": do {self.num.hexadecimalToBinary()}
         case "十六进制 -> 八进制": do {self.num.hexadecimalToOctal()}
         case "十六进制 -> 十进制": do {self.num.hexadecimalToDecimal()}
